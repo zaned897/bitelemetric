@@ -1,13 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Aplicación FastAPI</title>
-    <link rel="stylesheet" href="{{ url_for('static', path='/css/styles.css') }}">
+    <title>bitelemetric - Automatización Industrial con AI</title>
+    <link rel="stylesheet" href="/static/css/style.css">
 </head>
 <body>
-    <h1>Hola, {{ name }}! how are you</h1>
-    <script src="{{ url_for('static', path='/js/script.js') }}"></script>
+    <header id="inicio">
+        <nav>
+            <div class="logo">bitelemetric</div>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+        <div class="hero">
+            <h1>Automatización Industrial Impulsada por AI</h1>
+            <p>Innovamos en electrónica de potencia, visión computacional y sensores inteligentes.</p>
+            <a href="#servicios" class="btn">Explora Nuestros Servicios</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="service-section" id="servicio1">
+            <div class="service-content">
+                <h2>Visión Computacional</h2>
+                <p>Implementamos sistemas avanzados de visión artificial para mejorar procesos productivos y garantizar la calidad.</p>
+            </div>
+        </section>
+        <section class="service-section" id="servicio2">
+            <div class="service-content">
+                <h2>Modelos Predictivos</h2>
+                <p>Desarrollamos modelos de machine learning para anticipar fallas y optimizar el rendimiento de tus operaciones.</p>
+            </div>
+        </section>
+        <section class="service-section" id="servicio3">
+            <div class="service-content">
+                <h2>Sensores Inteligentes</h2>
+                <p>Diseñamos e integramos sensores avanzados para la adquisición de datos precisos en tiempo real.</p>
+            </div>
+        </section>
+        <section class="service-section" id="servicio4">
+            <div class="service-content">
+                <h2>Electrónica de Potencia</h2>
+                <p>Ofrecemos soluciones en electrónica de potencia para mejorar la eficiencia y el control en sistemas industriales.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contacto">
+        <p>&copy; 2023 bitelemetric. Todos los derechos reservados.</p>
+        <p><a href="mailto:contacto@bitelemetric.com">contacto@bitelemetric.com</a></p>
+    </footer>
+
+    <script src="/static/js/script.js"></script>
 </body>
 </html>
+
