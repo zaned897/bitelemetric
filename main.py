@@ -1,22 +1,15 @@
-from fastapi import FastAPI
-from fastapi.responses import HTMLResponse
+from fastapi import FastAPI, Request
+from fastapi.staticfiles import StaticFiles
+from fastapi.templating import Jinja2Templates
 
 app = FastAPI()
 
-@app.get("/", response_class=HTMLResponse)
-async def read_root():
-    return """
-    <html>
-        <head>
-            <title>Bitelemetric</title>
-        </head>
-        <body>
-            <h1>Bitelemetric rebranding in progress!</h1>
-            <p>Check back soon!</p>
-        </body>
-    </html>
-    """
+app.mount("/static", StaticFiles(directory="static"), name="static")
 
-@app.get("/api/hello")
-def hello():
-    return {"message": "Flow ready to go!"}
+templates = Jinja2Templates(directory="templates")
+
+@app.get("/", response_model=str)
+async def home(request: Request)  -> templates.TemplateResponse:
+    """ Home page """
+    return templates.TemplateResponse("index.html", {"request": request, "name": "World"})
+
